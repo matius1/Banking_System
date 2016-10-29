@@ -14,6 +14,13 @@ body {
 	margin: 0 auto;
 }
 
+.section{
+	border-radius: 15px;
+	padding: 10px;
+	margin: 10px 0px ;
+	background-color: #F0F0F0;
+	
+}
 
 .logo {
 	width: 40%;
@@ -43,13 +50,14 @@ body {
 	z-index: 1;
 	background-color: #F8F8FF;
 	border-radius: 15px;
-	min-width: 300px;
+	min-width: 50%;
 	padding: 30px;
+	width: 100%;
 }
 
 
 
-ul {
+.menubar ul {
 	background-color: #333;
     list-style-type: none;
     margin: 0;
@@ -58,11 +66,11 @@ ul {
     border-radius: 10px;
 }
 
-li {
+.menubar li {
     float: left;
 }
 
-li a {
+.menubar li a {
 	border-radius: 5px;
     display: block;
     color: white;
@@ -71,15 +79,31 @@ li a {
     text-decoration: none;
 }
 
-.active {
+.menubar  .active {
     background-color: #43A047;
 }
 
-li a:hover {
+.menubar li a:hover {
     font-weight: bold;
 }
 
 
+
+
+.accountTable {
+
+	
+}
+
+.accountTable h2{
+	padding-bottom: 20px;
+}
+
+.table tr:HOVER{
+	background-color: #43A047;
+	font-weight: bolder;
+	color: white;
+}
 
 .form button:hover, .form button:active, .form button:focus {
 	background: #43A047;
