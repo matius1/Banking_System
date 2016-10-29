@@ -11,22 +11,30 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+.logo {
+	width: 40%;
+	padding: 2% 0 0;
+	margin: auto;
+}
+
+.logo h1 {
 	font-size: 450%;
 	text-align: center;
 	color: white;
 }
 
-h4 {
+.logo h4 {
 	font-style: italic; text-align : right;
 	color: white;
 	padding-bottom: 30px;
 	text-align: right;
 }
 
+
+
 .login-page {
 	width: 360px;
-	padding: 8% 0 0;
+	padding: 2% 0 0;
 	margin: auto;
 }
 

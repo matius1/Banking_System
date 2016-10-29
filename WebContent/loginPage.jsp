@@ -15,10 +15,9 @@
 	</div>
 	</header>
 	
-	<div class="login-page">
+	<jsp:include page="logo.jsp" />
 	
-	<h1>Alien Bank</h1>
-	<h4>bank nie z tej ziemi</h4>
+	<div class="login-page">
 		<div class="form">
 			<form class="login-form">
 				<input type="text" placeholder="Login" />
