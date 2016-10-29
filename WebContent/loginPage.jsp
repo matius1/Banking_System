@@ -9,10 +9,16 @@
 </head>
 
 <body>
+<header>
+	<div class="header">
+		<p>Sieciowe Systemy Informacyjne - Informatyka IV rok - Wykonali: Krzysztof Peziol, Marcin Migda, Dominik Nowak, Mateusz Skocz</p>
+	</div>
+	</header>
+	
 	<div class="login-page">
 	
 	<h1>Alien Bank</h1>
-	
+	<h4>bank nie z tej ziemi</h4>
 		<div class="form">
 			<form class="login-form">
 				<input type="text" placeholder="Login" />
@@ -28,9 +34,7 @@
 	</div>
 	
 	
-	<div class="footer">
-		<p>Sieciowe Systemy Informacyjne - Informatyka IV rok - Wykonali: Krzysztof Peziol, Marcin Migda, Dominik Nowak, Mateusz Skocz</p>
-	</div>
+	
 </body>
 
 </html>
