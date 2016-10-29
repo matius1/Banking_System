@@ -5,13 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/login_style.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>Alien Bank</title>
 </head>
 
 <body>
 	<div class="login-page">
+	
+	<h1>Alien Bank</h1>
+	
 		<div class="form">
-
 			<form class="login-form">
 				<input type="text" placeholder="Login" />
 				<input type="password" placeholder="Haslo" /> 
