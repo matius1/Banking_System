@@ -1,8 +1,27 @@
-	<div class="menubar">
-		<ul>
-			<li><a class="active" href="#home">Strona Glowna</a></li>
-			<li><a href="#news">PRZELEWY</a></li>
-			<li><a href="#contact">RACHUNKI BANKOWE</a></li>
-			<li><a href="#about">USTAWIENIA</a></li>
-		</ul>
+	
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="home.jsp">STRONA GLOWNA</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">PRZELEWY <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="transferIN.jsp">Wewnetrzny</a></li>
+						<li><a href="transferOUT.jsp">Zewnetrzny</a></li>
+						<li><a href="#">Ksiazka adresowa</a></li>
+					</ul>
+				</li>
+				<li><a href="#">RACHUNKI BANKOWE</a></li>
+				<li><a href="#">USTAWIENIA</a></li>
+				
+			</ul>
+
+		</div>
+		<!-- /.navbar-collapse -->
 	</div>
+	<!-- /.container-fluid -->
+</nav>
