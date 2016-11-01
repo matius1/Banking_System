@@ -99,11 +99,34 @@ body {
 	padding-bottom: 20px;
 }
 
-.table tr:HOVER{
+.table tr:not(thead):HOVER{
 	background-color: #43A047;
 	font-weight: bolder;
 	color: white;
 }
+
+.cards .glyphicon-ok{
+	color: green;
+}
+
+.cards .glyphicon-remove{
+	color: red;
+}
+
+.cards .glyphicon-ban-circle{
+	color: red;
+}
+
+
+.cards button{
+	margin:20px;
+ 	float: right;
+	background-color: #43A047;
+}
+.cards button:HOVER{
+	font-weight: bolder;
+}
+
 
 .form button:hover, .form button:active, .form button:focus {
 	background: #43A047;

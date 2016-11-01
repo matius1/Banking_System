@@ -24,15 +24,16 @@
 		<div class="accountTable">
 		
 			
-			  <h2>Twoje numery bankowe</h2>
+			  <h2>Twoje Numery Bankowe</h2>
 			  
 			  <table class="table">
 			    <thead>
-			      <tr>
+			     <tr>
 			        <th>ID</th>
 			        <th>Numer Rachunku</th>
 			        <th>Saldo</th>
 			        <th>Waluta</th>
+			        <th>Szczegoly</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -41,18 +42,21 @@
 			        <td>PL697205975139167893297143402333</td>
 			        <td>1305.20</td>
 			        <td>PLN</td>
+			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
 			      </tr>
 			      <tr>
 			        <td>2</td>
 			        <td>PL618896332508543497938224365029</td>
 			        <td>4505.20</td>
 			        <td>PLN</td>
+			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
 			      </tr>
 			      <tr>
 			        <td>3</td>
 			        <td>PL127648037306331363545991808917</td>
 			        <td>992.20</td>
 			        <td>EUR</td>
+			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
 			      </tr>
 			    </tbody>
 			  </table>
@@ -60,7 +64,50 @@
 			</div>
 		</div>
 		
-
+		<div class="section">
+			<div class="cards">
+				<h2>Twoje Karty</h2>
+				
+				<table class="table">
+				    <thead>
+				     <tr>
+				        <th>ID</th>
+				        <th>Numer</th>
+				        <th>Data Waznosci</th>
+				        <th>Typ</th>
+				        <th>Platnosc Zblizeniowa</th>
+				        <th>Zablokuj</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				        <td>1</td>
+				        <td>5495090094495530</td>
+				        <td>09/20</td>
+				        <td>Mastercard Debit</td>
+				        <td><i class="glyphicon glyphicon-ok"></i></td>
+				        <td><a href="#"><i class="glyphicon glyphicon-ban-circle"></i></a></td>
+				      </tr>
+				      <tr>
+				        <td>2</td>
+				        <td>5562801796483717</td>
+				        <td>01/17</td>
+				        <td>American Express Credit</td>
+				        <td><i class="glyphicon glyphicon-remove"></i></td>
+				        <td><a href="#"><i class="glyphicon glyphicon-ban-circle"></i></a></td>
+				      </tr>
+				     
+				    </tbody>
+				    <button type="button" class="btn btn-success">Zamow Nowa Karte</button>
+				
+				  </table>
+			
+			
+				
+	
+			</div>
+			
+		</div>
 </div>
 </body>
 </html>
