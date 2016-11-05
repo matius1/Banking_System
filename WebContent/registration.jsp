@@ -23,7 +23,7 @@
 				  
 				  <input type="text" name="firstname" placeholder="Imie" required /><br>
 				  <input type="text" name="lastname" placeholder="Nazwisko" required /><br>
-				  <input type="text" name="email" placeholder="E-mail" required /><br>
+				  <input type="email" name="email" placeholder="E-mail" required /><br>
 				  <input type="text" name="login" placeholder="Login" required/><br>
 				  <input type="password" name="password" placeholder="Haslo" required/><br>
 				  <input type="digits" name="pesel" placeholder="Pesel" minlength='11' maxlength='11' required><br>
