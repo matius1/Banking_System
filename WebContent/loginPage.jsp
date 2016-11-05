@@ -26,7 +26,7 @@
 				<button>login</button>
 				
 				<p class="message">
-					Nie masz konta? <a href="#">Zarejestruj Sie!</a>
+					Nie masz konta? <a href="registration.jsp">Zarejestruj Sie!</a>
 				</p>
 			</form>
 		</div>
