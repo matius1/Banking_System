@@ -108,7 +108,7 @@ body {
 	
 }
 
-.zip_block{
+.block{
 	display:inline;
 }
 
@@ -118,4 +118,19 @@ body {
 
 #zip2{
 	width: 60%;
+}
+
+#house{
+	width: 48%;
+}
+
+#flat{
+	width: 50%;
+}
+
+.error {
+    color:red;
+}
+.valid {
+    color:green;
 }

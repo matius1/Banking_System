@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <link href="css/registration_style.css" rel="stylesheet" type="text/css">
 
 
@@ -19,7 +21,7 @@
 
 		<div class="form">
 			<h3>Nowy uzytkownik:</h3>
-			<form action='' method="post" name="Registration_Form" >
+			<form action='' method="post" name="Registration_Form" id="register" >
 				  
 				  <input type="text" name="firstname" placeholder="Imie" required /><br>
 				  <input type="text" name="lastname" placeholder="Nazwisko" required /><br>
@@ -29,8 +31,11 @@
 				  <input type="digits" name="pesel" placeholder="Pesel" minlength='11' maxlength='11' required><br>
 				  Adres:<br>
 				  <input type="text" name="street" placeholder="Ulica" required /><br>
-				  <input type="digits" name="house" placeholder="Nr domu/Nr mieszkania" required><br>
-				  <p class="zip_block">
+				  <p class="block">
+				  <input type="digits" id="house" name="house" placeholder="Nr domu" required>/
+				  <input type="digits" id="flat" name="flat" placeholder="Nr mieszkania"><br>
+				  </p>
+				  <p class="block">
 				  <input type="digits" id="zip" name="zip" placeholder="Kod pocztowy" minlength='2' maxlength='2' required>-
 				  <input type="digits" id="zip2" name="zip2" placeholder="Kod pocztowy" minlength='3' maxlength='3' required><br>
 				  </p>
