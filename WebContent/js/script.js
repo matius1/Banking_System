@@ -57,3 +57,34 @@
 			}
 		});
 	});
+ 
+ $(document).ready(function() {
+		$("#new_card").validate({
+			messages : {
+				street:{
+					required: 'Nazwa ulicy wymagana'
+				},
+				house:{
+					required: 'Numer domu wymagany',
+					digits: 'Wpisz tylko cyfry'
+				},
+				flat:{
+					digits: 'Wpisz tylko cyfry'
+				},
+				zip:{
+					required: 'Kod pocztowy wymagany',
+					digits: 'Wpisz tylko cyfry',
+					minlength: 'Wprowadz 2 cyfry'
+				},
+				zip2:{
+					required: 'Kod pocztowy wymagany',
+					digits: 'Wpisz tylko cyfry',
+					minlength: 'Wprowadz 3 cyfry'
+				},
+				city:{
+					required: 'Miasto wymagane'
+				}
+			}
+		});
+	});
+

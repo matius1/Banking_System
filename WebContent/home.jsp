@@ -98,8 +98,7 @@
 				      </tr>
 				     
 				    </tbody>
-				    <button type="button" class="btn btn-success">Zamow Nowa Karte</button>
-				
+					<a href="new_card.jsp" class="btn btn-success">Zamow Nowa Karte</a>
 				  </table>
 			
 			
