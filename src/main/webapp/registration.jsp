@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,30 +22,30 @@
 
 		<div class="form">
 			<h3>Nowy uzytkownik:</h3>
-			<form action='' method="post" name="Registration_Form" id="register" >
+			<form:form action='register' method="post" name="Registration_Form" id="register" >
 				  
-				  <input type="text" name="firstname" placeholder="Imie" required /><br>
-				  <input type="text" name="lastname" placeholder="Nazwisko" required /><br>
+				  <input type="text" name="imie" placeholder="Imie" required /><br>
+				  <input type="text" name="nazwisko" placeholder="Nazwisko" required /><br>
 				  <input type="email" name="email" placeholder="E-mail" required /><br>
 				  <input type="text" name="login" placeholder="Login" required/><br>
-				  <input type="password" name="password" placeholder="Haslo" required/><br>
+				  <input type="password" name="haslo" placeholder="Haslo" required/><br>
 				  <input type="digits" name="pesel" placeholder="Pesel" minlength='11' maxlength='11' required><br>
 				  Adres:<br>
-				  <input type="text" name="street" placeholder="Ulica" required /><br>
+				  <input type="text" name="ulica" placeholder="Ulica" required /><br>
 				  <p class="block">
-				  <input type="digits" id="house" name="house" placeholder="Nr domu" required>/
-				  <input type="digits" id="flat" name="flat" placeholder="Nr mieszkania"><br>
+				  <input type="digits" id="dom" name="dom" placeholder="Nr domu" required>/
+				  <input type="digits" id="mieszkanie" name="mieszkanie" placeholder="Nr mieszkania"><br>
 				  </p>
 				  <p class="block">
 				  <input type="digits" id="zip" name="zip" placeholder="Kod pocztowy" minlength='2' maxlength='2' required>-
 				  <input type="digits" id="zip2" name="zip2" placeholder="Kod pocztowy" minlength='3' maxlength='3' required><br>
 				  </p>
-				  <input type="text" name="city" placeholder="Miasto" required /><br>
-				  <input type="digits" name="phone" placeholder="Numer telefonu" minlength='9' maxlength='9' required><br>
-				  <input type="date" name="born_date" placeholder="Data urodzenia" required><br>
+				  <input type="text" name="miasto" placeholder="Miasto" required /><br>
+				  <input type="digits" name="numerTel" placeholder="Numer telefonu" minlength='9' maxlength='9' required><br>
+				  <input type="date" name="dataUro" placeholder="Data urodzenia" required><br>
 				 
-				  <button name="Registration" type="submit" value="Submit" class="btn">Zarejestruj</button>  			
-			</form>
+				  <button name="Registration" type="submit" value="Register" class="btn">Zarejestruj</button>  			
+                        </form:form>
 		</div>
 		
 			

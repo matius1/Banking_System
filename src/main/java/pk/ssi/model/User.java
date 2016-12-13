@@ -2,19 +2,22 @@ package pk.ssi.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
 public class User {
+    
 	@Column(name = "Imie")
 	private String imie;
 	
 	@Column(name = "Nazwisko")
 	private String nazwisko;
 	
-	@Column(name = "E-mail")
+	@Column(name = "Email")
 	private String email;
 	
 	@Column(name = "Login")

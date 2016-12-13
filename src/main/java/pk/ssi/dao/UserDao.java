@@ -3,6 +3,8 @@ package pk.ssi.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
@@ -14,43 +16,46 @@ import pk.ssi.model.User;
 @Transactional
 public class UserDao {
 	
-	@PersistenceContext
-	private EntityManager entityManager;
 
 	public void create(User user) {
-	    entityManager.persist(user);
-	    return;
-	  }
-	  
-	  public void delete(User user) {
-	    if (entityManager.contains(user))
-	      entityManager.remove(user);
-	    else
-	      entityManager.remove(entityManager.merge(user));
-	    return;
-	  }
-	  
-	  @SuppressWarnings("unchecked")
-	  public List getAll() {
-	    return entityManager.createQuery("from User").getResultList();
-	  }
-	  
-	  public User getByEmail(String email) {
-	    return (User) entityManager.createQuery(
-	        "from User where Email = :email")
-	        .setParameter("Email", email)
-	        .getSingleResult();
-	  }
-	  
-	  public User getByPesel(String pesel) {
-		    return (User) entityManager.createQuery(
-		        "from User where Pesel = :pesel")
-		        .setParameter("Pesel", pesel)
-		        .getSingleResult();
-		  }
+	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+            EntityManager em = emf.createEntityManager();
 
-	  public void update(User user) {
-	    entityManager.merge(user);
+            em.getTransaction().begin();
+            em.persist(user);
+            em.getTransaction().commit();
 	    return;
 	  }
+//	  
+//	  public void delete(User user) {
+//	    if (entityManager.contains(user))
+//	      entityManager.remove(user);
+//	    else
+//	      entityManager.remove(entityManager.merge(user));
+//	    return;
+//	  }
+//	  
+//	  @SuppressWarnings("unchecked")
+//	  public List getAll() {
+//	    return entityManager.createQuery("from User").getResultList();
+//	  }
+//	  
+//	  public User getByEmail(String email) {
+//	    return (User) entityManager.createQuery(
+//	        "from User where Email = :email")
+//	        .setParameter("Email", email)
+//	        .getSingleResult();
+//	  }
+//	  
+//	  public User getByPesel(String pesel) {
+//		    return (User) entityManager.createQuery(
+//		        "from User where Pesel = :pesel")
+//		        .setParameter("Pesel", pesel)
+//		        .getSingleResult();
+//		  }
+//
+//	  public void update(User user) {
+//	    entityManager.merge(user);
+//	    return;
+//	  }
 }

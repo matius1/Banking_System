@@ -45,13 +45,13 @@ CREATE TABLE `adres` (
 CREATE TABLE `user` (
   `Imie` varchar(40) NOT NULL,
   `Nazwisko` varchar(50) NOT NULL,
-  `E-mail` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
   `Login` varchar(50) NOT NULL,
   `Haslo` varchar(50) NOT NULL,
   `Pesel` varchar(40) NOT NULL,
   `IdAdres` int(11) NOT NULL,
   `NumerTel` varchar(30) NOT NULL,
-  `DataUrodzenia` date NOT NULL
+  `DataUrodzenia` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -77,11 +77,6 @@ ALTER TABLE `user`
 -- Ograniczenia dla zrzutów tabel
 --
 
---
--- Ograniczenia dla tabeli `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`IdAdres`) REFERENCES `adres` (`IdAdres`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
