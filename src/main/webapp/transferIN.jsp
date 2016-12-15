@@ -51,7 +51,7 @@
 		  <input type="text" class="form-control" value="Wpisz Kwote...">
 		</div>
   
-  		 <button type="button" class="btn btn-success btnPrzelew">Wykonaj Przelew</button>
+  		 <button action='/transfer' type="button" class="btn btn-success btnPrzelew">Wykonaj Przelew</button>
   
 	
 	</div>

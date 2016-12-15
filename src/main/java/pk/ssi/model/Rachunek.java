@@ -17,13 +17,13 @@ public class Rachunek {
 	private String nrRachunku;
 	
 	@Column(name = "Saldo")
-	private int saldo;
+	private double saldo;
 	
 	@Column(name = "Waluta")
 	private String waluta;
 	
 	@Column(name = "Pesel")//pesel wlasciciela, klucz obcy
-	private int pesel;
+	private long pesel;
 
 	public int getIdRachunek() {
 		return idRachunek;
@@ -41,7 +41,7 @@ public class Rachunek {
 		this.nrRachunku = nrRachunku;
 	}
 
-	public int getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
 
@@ -57,7 +57,7 @@ public class Rachunek {
 		this.waluta = waluta;
 	}
 
-	public int getPesel() {
+	public long getPesel() {
 		return pesel;
 	}
 
