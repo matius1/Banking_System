@@ -37,7 +37,7 @@ public class RachunekDao {
             em.getTransaction().commit();
 	  }
     
-    public void transfer(String nr1, String nr2, double value){
+    public String transfer(String nr1, String nr2, double transferValue){//money from 1 to 2
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
         EntityManager em = emf.createEntityManager();
         CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -48,9 +48,24 @@ public class RachunekDao {
         q.where(cb.like(r.get("nrRachunku"), nr1));
         TypedQuery<Rachunek> query = em.createQuery(q);
         List<Rachunek> results = query.getResultList();
-        Rachunek r1=results.get(0);
-        System.out.println(r1.getNrRachunku());
-        System.out.println(r1.getSaldo());
+        Rachunek r1=results.get(0);//1 sposob query
+        
+        Query q2=em.createQuery("SELECT r FROM Rachunek r WHERE r.nrRachunku LIKE :nr2")
+        .setParameter("nr2", nr2);
+        Rachunek r2=(Rachunek)q2.getResultList().get(0);//2 sposob
+        
+        if(!r1.getWaluta().equals(r2.getWaluta()))
+            return "badCurrency";
+        else if(r1.getSaldo()<transferValue)
+            return "lowBalance";
+        else
+        {
+            em.getTransaction().begin();
+            r1.setSaldo(r1.getSaldo()-transferValue);
+            r2.setSaldo(r2.getSaldo()+transferValue);
+            em.getTransaction().commit();
+            return "success";
+        }
     }
     
 }

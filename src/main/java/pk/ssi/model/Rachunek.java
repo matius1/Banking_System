@@ -45,7 +45,7 @@ public class Rachunek {
 		return saldo;
 	}
 
-	public void setSaldo(int saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 

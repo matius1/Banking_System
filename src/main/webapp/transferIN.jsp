@@ -23,9 +23,10 @@
 	
 		<h2>Przelew Wewnetrzny</h2>
 		
+                <form:form action='transferIN' method="post" name="Transfer_Form" id="transferIN" >
 		<div class="form-group">
 		    <label for="selectSource">Z:</label>
-		    <select class="form-control">
+		    <select id="nr1" name="nr1" class="form-control" form="transferIN">
 		      <option>PL697205975139167893297143402333</option>
 		      <option>PL618896332508543497938224365029</option>
 		      <option>PL127648037306331363545991808917</option>
@@ -36,7 +37,7 @@
 	  	
 	  	<div class="form-group">
 		    <label for="selectSource">Do:</label>
-		    <select class="form-control">
+		    <select id="nr2" name="nr2" class="form-control" form="transferIN">
 		      <option>PL618896332508543497938224365029</option>
 		      <option>PL697205975139167893297143402333</option>
 		      <option>PL127648037306331363545991808917</option>
@@ -48,18 +49,12 @@
 	  	<p>Kwota:</p>
 	  	<div class="input-group">
 		  <span class="input-group-addon">PLN</span>
-		  <input type="text" class="form-control" value="Wpisz Kwote...">
+		  <input type="digits" id="value" name="value" form="transferIN" class="form-control" placeholder="Wpisz Kwote">
 		</div>
-  
-  		 <button action='/transfer' type="button" class="btn btn-success btnPrzelew">Wykonaj Przelew</button>
-  
-	
+                <input type="text" id="value" name="id" form="transferIN" class="form-control">
+  		 <button name="transferIN" type="submit" value="transferIN" class="btn btn-success btnPrzelew">Wykonaj Przelew</button>
+                 </form:form>
 	</div>
-	
-	
-	
-	
-	
 	</div>
 </body>
 </html>
