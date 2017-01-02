@@ -19,7 +19,7 @@ body {
 	padding: 10px;
 	margin: 10px 0px ;
 	background-color: #F0F0F0;
-	
+
 }
 
 .logo {
@@ -71,7 +71,7 @@ body {
 
 .accountTable {
 
-	
+
 }
 
 .accountTable h2{
@@ -121,7 +121,7 @@ body {
   width: auto;
 }
 
-.example6 .navbar-brand{ 
+.example6 .navbar-brand{
   background: url(http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png) center / contain no-repeat;
   width: 200px;
 }
@@ -135,11 +135,11 @@ body {
 	padding: 20px;
 	padding-right: 8%;
 	width: 50%;
-	
+
 }
 
 .form-group .saldo {
-	padding-top: 10px;	
+	padding-top: 10px;
 	font-size: larger;
 	font-weight: bold;
 }
@@ -154,3 +154,10 @@ body {
 	float: right;
 }
 
+
+.okIcon{
+	width: 100;
+	float: right;
+	padding: 0 10;
+	color: yellow;
+}
