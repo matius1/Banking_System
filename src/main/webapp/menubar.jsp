@@ -10,7 +10,7 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">PRZELEWY <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/bank/transferIN">Wewnetrzny</a></li>
+						<li><a href="/bank/transferInternal">Wewnetrzny</a></li>
 						<li><a href="transferOUT.jsp">Zewnetrzny</a></li>
 						<li><a href="#">Ksiazka adresowa</a></li>
 					</ul>

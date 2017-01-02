@@ -19,14 +19,13 @@ import pk.ssi.model.Transfer;
  * @author Degus
  */
 @Controller
-@RequestMapping("/transferIN")
+@RequestMapping("/transferInternal")
 public class RachunekController {
     
     @RequestMapping(method = RequestMethod.GET)
     public String transferForm(Map<String, Object> model) {
         Transfer transferForm = new Transfer();
         model.put("transferForm", transferForm);
-        System.out.println("dsds");
         return "transferIN";
     }
     
@@ -34,7 +33,7 @@ public class RachunekController {
     public String transfer(@ModelAttribute("transferForm") Transfer transfer,
             Map<String, Object> model) {
         
-        System.out.println(transfer.getNr1());
+        System.out.println("Transfer z "+transfer.getNr1()+" do "+transfer.getNr2()+" wartosc "+transfer.getValue());
         
         RachunekDao rd=new RachunekDao();
         String result=rd.transfer(transfer.getNr1(), transfer.getNr2(), transfer.getValue());
