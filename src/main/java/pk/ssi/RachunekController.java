@@ -35,6 +35,9 @@ public class RachunekController {
         
         System.out.println("Transfer z "+transfer.getNr1()+" do "+transfer.getNr2()+" wartosc "+transfer.getValue());
         
+        if(transfer.getNr2()==null)
+            return "transferFailure";
+        
         RachunekDao rd=new RachunekDao();
         String result=rd.transfer(transfer.getNr1(), transfer.getNr2(), transfer.getValue());
         System.out.println(result);
@@ -43,7 +46,7 @@ public class RachunekController {
             TransferDao td=new TransferDao();
             td.create(transfer);
         }
-        return "home";
+        return "transferComplete";
     }
     
 }

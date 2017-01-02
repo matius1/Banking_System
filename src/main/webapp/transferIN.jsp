@@ -50,7 +50,7 @@
                     <p>Kwota:</p>
                     <div class="input-group">
                       <span class="input-group-addon">PLN</span>
-                      <input type="digits" id="value" name="value" form="transferInId" class="form-control" placeholder="Wpisz Kwote">
+                      <input type="number" min=0 step="0.01" id="value" name="value" form="transferInId" class="form-control" placeholder="Wpisz Kwote">
                     </div>
 
                     <button name="transferIN" type="submit" value="transferInternal" class="btn btn-success btnPrzelew">Wykonaj Przelew</button>
