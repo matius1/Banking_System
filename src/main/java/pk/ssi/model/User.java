@@ -42,6 +42,17 @@ public class User {
 	
 	@Column(name = "DataUrodzenia")
 	private String dataUro;
+        
+        @Column(name = "Rola")
+        private String rola;
+
+        public String getRola() {
+            return rola;
+        }
+
+        public void setRola(String rola) {
+            this.rola = rola;
+        }
 
 	public String getImie() {
 		return imie;

@@ -20,9 +20,9 @@
 	
 	<div class="login-page">
 		<div class="form">
-			<form:form method="post" action="login" modelAttribute="loginBean" class="login-form">
-				<input type="text" placeholder="Login" />
-				<input type="password" placeholder="Haslo" /> 
+			<form:form method="post" action="login" class="login-form">
+                                <input type="text" name="login" placeholder="Login" required/>
+                                <input type="password" name="haslo" placeholder="Haslo" required/>
 
 				<input type="submit" value="Zaloguj" />
 				
