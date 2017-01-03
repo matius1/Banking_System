@@ -2,6 +2,8 @@ package pk.ssi.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,10 +28,12 @@ public class User {
 	@Column(name = "Haslo")
 	private String haslo;
 	
-	@Id
+
 	@Column(name = "Pesel")
 	private String pesel;
-	
+
+        @Id
+        @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "IdAdres")
 	private int idAdres;
 	

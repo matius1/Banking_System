@@ -15,6 +15,7 @@ import javax.persistence.Persistence;
 import pk.ssi.model.User;
 import pk.ssi.model.Adres;
 import pk.ssi.dao.UserDao;
+import pk.ssi.dao.AdresDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +43,10 @@ public class RegisterController {
         
         UserDao userDao = new UserDao();
         userDao.create(user);
+        
+        AdresDao adresDao = new AdresDao();
+        adresDao.create(adres);
+        
          
         // for testing purpose:
         System.out.println("imie: " + user.getImie());
