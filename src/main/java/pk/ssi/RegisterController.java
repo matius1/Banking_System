@@ -67,6 +67,6 @@ public class RegisterController {
         System.out.println("zip2: " + adres.getZip2());
         System.out.println("miasto: " + adres.getMiasto());
          
-        return "loginPage";
+        return "registrationSuccess";
     }
 }
