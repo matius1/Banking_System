@@ -156,8 +156,28 @@ body {
 
 
 .okIcon{
-	width: 100;
+	width: 100px;
 	float: right;
+	padding: 0 10;
+	color: yellow;
+}
+
+.reg-Success {
+	border-radius: 25px;
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+
+.regOkIcon{
+	width: 100px;
+	float: center;
 	padding: 0 10;
 	color: yellow;
 }
