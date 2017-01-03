@@ -22,10 +22,10 @@
 
 		<div class="form">
 			<h3>Dodaj do ksiazki adresowej:</h3>
-			<form:form action='register' method="post" name="add_Address_Form" id="address" >
+			<form:form action='addContactBook' method="post" name="add_Address_Form" id="address" >
 
 				  <input type="text" name="nazwa" placeholder="Nazwa" required /><br>
-				  <input type="text" name="numerKonta" placeholder="Numer Konta" required /><br>
+				  <input type="text" name="numer" placeholder="Numer Konta" required /><br>
 
 				  <button name="Address" type="submit" value="address" class="btn">Dodaj</button>
                         </form:form>
