@@ -18,8 +18,7 @@
 
 
 	<div class="container">
-
-        <h3>Sprawdz rachunek odbiorcy!</h3>
+        <h3><%=request.getSession().getAttribute("message")%></h3>
       </br></br>
         <a href="javascript:history.back()" class="btn btn-success">Wstecz</a>
       </br></br>

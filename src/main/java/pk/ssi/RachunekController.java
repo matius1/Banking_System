@@ -6,7 +6,9 @@
 package pk.ssi;
 
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,22 +33,34 @@ public class RachunekController {
     
     @RequestMapping(method = RequestMethod.POST)
     public String transfer(@ModelAttribute("transferForm") Transfer transfer,
-            Map<String, Object> model) {
+            Map<String, Object> model, HttpServletRequest request) {
         
+        RachunekDao rd=new RachunekDao();  
         System.out.println("Transfer z "+transfer.getNr1()+" do "+transfer.getNr2()+" wartosc "+transfer.getValue());
         
-        if(transfer.getNr2()==null)
-            return "transferFailure";
-        
-        RachunekDao rd=new RachunekDao();
-        String result=rd.transfer(transfer.getNr1(), transfer.getNr2(), transfer.getValue());
-        System.out.println(result);
-        if(result.equals("success"))
+        if(rd.isRachunekExist(transfer.getNr2())==false)
         {
-            TransferDao td=new TransferDao();
-            td.create(transfer);
+            request.getSession().setAttribute("message", "Sprawdz rachunek odbiorcy!");
+            return "transferFailure";
         }
-        return "transferComplete";
+        else{
+            String result=rd.transfer(transfer.getNr1(), transfer.getNr2(), transfer.getValue());
+            System.out.println(result);
+            if(result.equals("success"))
+            {
+                TransferDao td=new TransferDao();
+                td.create(transfer);
+                return "transferComplete";
+            }
+            else if(result.equals("lowBalance")){
+                request.getSession().setAttribute("message", "Masz za malo srodkow na koncie!");
+                return "transferFailure";
+            }
+            else{
+                request.getSession().setAttribute("message", "Waluta nie zgadza sie");
+                return "transferFailure";
+            }  
+        }
     }
     
 }

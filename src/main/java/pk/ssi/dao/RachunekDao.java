@@ -68,4 +68,17 @@ public class RachunekDao {
         }
     }
     
+    public boolean isRachunekExist(String nr1){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+        EntityManager em = emf.createEntityManager();
+        try{
+            Query q1=em.createQuery("SELECT r FROM Rachunek r WHERE r.nrRachunku LIKE :nr1")
+            .setParameter("nr1", nr1);
+            q1.getResultList().get(0);
+        }catch(Exception e){
+            return false;
+        }
+        return true;
+    }
+    
 }
