@@ -15,17 +15,26 @@ import pk.ssi.model.User;
 @Repository
 @Transactional
 public class UserDao {
-	
+    
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+        EntityManager em = emf.createEntityManager();
 
 	public void create(User user) {
-	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
-            EntityManager em = emf.createEntityManager();
-
             em.getTransaction().begin();
             em.persist(user);
             em.getTransaction().commit();
 	    return;
 	  }
+        
+        public User getByLogin(String login, String haslo) {
+            System.out.println(login);
+            System.out.println(haslo);
+            User user = (User) em.createQuery("from User where Login = :login and Haslo = :haslo")
+                    .setParameter("login", login)
+                    .setParameter("haslo", haslo)
+                    .getSingleResult();
+            return user;
+        }
 //	  
 //	  public void delete(User user) {
 //	    if (entityManager.contains(user))

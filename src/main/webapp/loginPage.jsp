@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,16 +20,16 @@
 	
 	<div class="login-page">
 		<div class="form">
-			<form class="login-form">
-				<input type="text" placeholder="Login" />
-				<input type="password" placeholder="Haslo" /> 
+			<form:form method="post" action="login" class="login-form">
+                                <input type="text" name="login" placeholder="Login" required/>
+                                <input type="password" name="haslo" placeholder="Haslo" required/>
 
-				<button>login</button>
+				<input type="submit" value="Zaloguj" />
 				
 				<p class="message">
 					Nie masz konta? <a href="/bank/register">Zarejestruj Sie!</a>
 				</p>
-			</form>
+			</form:form>
 		</div>
 	</div>
 	
