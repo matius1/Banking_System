@@ -33,6 +33,7 @@
 			        <th>ID</th>
 			        <th>Imie</th>
 			        <th>Nazwisko</th>
+                                <th>Email</th>
 			        <th>NumerTel</th>
 			        <th>Pesel</th>
                                 <th>Login</th>
@@ -41,17 +42,18 @@
 			    </thead>
 
 			    <tbody>
-                              
+                              <c:forEach var="users" items="${listOfUsers}" varStatus="loop">
                                   <tr>
-                                      <td>1</td>
-                                      <td>Franciszek</td>
-                                      <td>Dolas</td>
-                                      <td>000000</td>
-                                      <td>11111111111</td>
-                                      <td>franek</td>
+                                      <td>${loop.index + 1}</td>
+                                      <td>${users.imie}</td>
+                                      <td>${users.nazwisko}</td>
+                                      <td>${users.email}</td>
+                                      <td>${users.numerTel}</td>
+                                      <td>${users.pesel}</td>
+                                      <td>${users.login}</td>
                                       <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
                                   </tr>
-                              
+                              </c:forEach>  
 			    </tbody>
 			  </table>
 			  

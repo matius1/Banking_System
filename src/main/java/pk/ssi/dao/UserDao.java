@@ -36,6 +36,14 @@ public class UserDao {
             em.getTransaction().commit();
             return user;
         }
+        
+        public List getUsers() {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+            EntityManager em = emf.createEntityManager();
+            em.getTransaction().begin();
+            return em.createQuery("from User").getResultList();
+        }
+            
 //	  
 //	  public void delete(User user) {
 //	    if (entityManager.contains(user))
