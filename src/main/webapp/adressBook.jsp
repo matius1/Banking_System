@@ -14,6 +14,9 @@
 <title>Alien Bank</title>
 </head>
 <body>
+    
+<%
+    %>
 <jsp:include page="logo.jsp" />
 
 	<jsp:include page="menubar.jsp" />
