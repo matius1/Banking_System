@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,28 +37,17 @@
 			        <th>Szczegoly</th>
 			      </tr>
 			    </thead>
+
 			    <tbody>
-			      <tr>
-			        <td>1</td>
-			        <td>PL697205975139167893297143402333</td>
-			        <td>1305.20</td>
-			        <td>PLN</td>
-			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
-			      </tr>
-			      <tr>
-			        <td>2</td>
-			        <td>PL618896332508543497938224365029</td>
-			        <td>4505.20</td>
-			        <td>PLN</td>
-			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
-			      </tr>
-			      <tr>
-			        <td>3</td>
-			        <td>PL127648037306331363545991808917</td>
-			        <td>992.20</td>
-			        <td>EUR</td>
-			        <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
-			      </tr>
+                              <c:forEach var="account" items="${listOfAccount}" varStatus="loop">
+                                  <tr>
+                                      <td>${loop.index + 1}</td>
+                                      <td>${account.nrRachunku}</td>
+                                      <td>${account.saldo}</td>
+                                      <td>${account.waluta}</td>
+                                      <td><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
+                                  </tr>
+                              </c:forEach>
 			    </tbody>
 			  </table>
 			  

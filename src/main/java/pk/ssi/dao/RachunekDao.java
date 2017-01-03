@@ -5,6 +5,7 @@
  */
 package pk.ssi.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -43,6 +44,15 @@ public class RachunekDao {
         int result = (int) query.getSingleResult();
         return result;
     }
+    
+    public List getByPesel(Long pesel) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        return em.createQuery("from Rachunek where Pesel = :pesel")
+                .setParameter("pesel", pesel)
+                .getResultList();
+        }
     
     public String transfer(String nr1, String nr2, double transferValue){//money from 1 to 2
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
