@@ -25,7 +25,7 @@
         <img class="okIcon" src="lib/img/okIcon.png">
         <h3>Przelew zostal wykonany!</h3>
       </br></br>
-        <a href="home.jsp" class="btn btn-success">Wroc na strone glowna</a>
+        <a href="/bank/home" class="btn btn-success">Wroc na strone glowna</a>
       </div>
 
 	</div>

@@ -5,6 +5,7 @@
  */
 package pk.ssi;
 
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pk.ssi.dao.RachunekDao;
 import pk.ssi.dao.TransferDao;
+import pk.ssi.model.Rachunek;
 import pk.ssi.model.Transfer;
+import pk.ssi.model.User;
 
 /**
  *
@@ -25,10 +28,21 @@ import pk.ssi.model.Transfer;
 public class RachunekController {
     
     @RequestMapping(method = RequestMethod.GET)
-    public String transferForm(Map<String, Object> model) {
+    public String transferForm(Map<String, Object> model, HttpServletRequest request) {
         Transfer transferForm = new Transfer();
         model.put("transferForm", transferForm);
-        return "transferIN";
+        
+        try{
+            User userToLogin = (User)request.getSession().getAttribute("user");
+            RachunekDao rachunekDao = new RachunekDao();
+            List<Rachunek>rachunki = rachunekDao.getByPesel(userToLogin.getPesel());
+            model.put("listOfAccount", rachunki);
+            System.out.println(rachunki);
+            return "transferIN";
+        }
+        catch(Exception e){
+            return "loginPage";
+        }
     }
     
     @RequestMapping(method = RequestMethod.POST)
