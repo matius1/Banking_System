@@ -29,13 +29,20 @@ import pk.ssi.model.Rachunek;
 public class RachunekDao {
     
     public void create(Rachunek rachunek) {
-	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
             EntityManager em = emf.createEntityManager();
-                   
             em.getTransaction().begin();
             em.persist(rachunek);
             em.getTransaction().commit();
 	  }
+    
+    public int findNewId() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+        EntityManager em = emf.createEntityManager();
+        Query query = em.createQuery("SELECT COALESCE(MAX(idRachunek), 0) FROM Rachunek");
+        int result = (int) query.getSingleResult();
+        return result;
+    }
     
     public String transfer(String nr1, String nr2, double transferValue){//money from 1 to 2
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");

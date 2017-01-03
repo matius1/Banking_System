@@ -30,7 +30,7 @@ public class User {
 	
 
 	@Column(name = "Pesel")
-	private String pesel;
+	private long pesel;
 
         @Id
         @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -94,11 +94,11 @@ public class User {
 		this.haslo = haslo;
 	}
 
-	public String getPesel() {
+	public long getPesel() {
 		return pesel;
 	}
 
-	public void setPesel(String pesel) {
+	public void setPesel(long pesel) {
 		this.pesel = pesel;
 	}
 

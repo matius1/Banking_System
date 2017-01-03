@@ -5,17 +5,22 @@
  */
 package pk.ssi;
 
+import static java.lang.Math.abs;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import pk.ssi.model.User;
 import pk.ssi.model.Adres;
+import pk.ssi.model.Rachunek;
 import pk.ssi.dao.UserDao;
 import pk.ssi.dao.AdresDao;
+import pk.ssi.dao.RachunekDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +51,18 @@ public class RegisterController {
         
         AdresDao adresDao = new AdresDao();
         adresDao.create(adres);
+        
+        RachunekDao rachunekDao = new RachunekDao();
+        Rachunek rachunek = new Rachunek();
+        int newId = rachunekDao.findNewId();
+        rachunek.setIdRachunek(newId + 1);
+        Random gen = new Random();
+        long randomLong = abs(gen.nextLong());
+        rachunek.setNrRachunku(Long.toString(randomLong));
+        rachunek.setPesel(user.getPesel());
+        rachunek.setSaldo(0.0);
+        rachunek.setWaluta("PLN");
+        rachunekDao.create(rachunek);
         
          
         // for testing purpose:
