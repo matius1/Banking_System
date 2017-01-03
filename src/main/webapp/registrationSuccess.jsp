@@ -22,7 +22,7 @@
         <h3>Zostales poprawnie zarejestrowany!</h3>
 
       </br>
-        <a href="loginPage.jsp" class="btn btn-success">Wroc na strone logowania</a>
+        <a href="/bank" class="btn btn-success">Wroc na strone logowania</a>
       
 
 	</div>
