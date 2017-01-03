@@ -1,4 +1,3 @@
-
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 <form:form method="get" action="logout" class="logout-form">
