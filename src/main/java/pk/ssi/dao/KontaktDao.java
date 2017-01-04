@@ -5,6 +5,7 @@
  */
 package pk.ssi.dao;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,5 +26,14 @@ public class KontaktDao {
             em.persist(kontakt);
             em.getTransaction().commit();
 	  }
+    
+    public List<Kontakt> getContactsByPesel(long pesel){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        return em.createQuery("from Kontakt where Pesel LIKE :pesel")
+                .setParameter("pesel", String.valueOf(pesel))
+                .getResultList();
+    }
     
 }

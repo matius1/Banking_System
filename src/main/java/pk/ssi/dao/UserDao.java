@@ -43,6 +43,17 @@ public class UserDao {
             em.getTransaction().begin();
             return em.createQuery("from User").getResultList();
         }
+        
+                public User getByAdresId(String idAdres) {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+            EntityManager em = emf.createEntityManager();
+            em.getTransaction().begin();
+            User user = (User) em.createQuery("from User where IdAdres = :idAdres")
+                    .setParameter("idAdres", idAdres)
+                    .getSingleResult();
+            em.getTransaction().commit();
+            return user;
+        }
             
 //	  
 //	  public void delete(User user) {

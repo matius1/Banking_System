@@ -25,33 +25,29 @@
 		<div class="accountTable">
 		
 			
-			  <h2>Klienci banku</h2>
-			  
+			  <h2>Adres klienta</h2>
+			  <h3>${user.imie} ${user.nazwisko}</h3>
 			  <table class="table">
 			    <thead>
 			     <tr>
 			        <th>ID</th>
-			        <th>Imie</th>
-			        <th>Nazwisko</th>
-                                <th>Email</th>
-			        <th>NumerTel</th>
-			        <th>Pesel</th>
-                                <th>Login</th>
-                                <th>Adres</th>
+			        <th>Ulica</th>
+			        <th>Dom</th>
+                                <th>Mieszkanie</th>
+			        <th>Zip</th>
+			        <th>Miasto</th>
 			      </tr>
 			    </thead>
 
 			    <tbody>
-                              <c:forEach var="users" items="${listOfUsers}" varStatus="loop">
+                              <c:forEach var="adres" items="${listOfAdres}" varStatus="loop">
                                   <tr>
                                       <td>${loop.index + 1}</td>
-                                      <td>${users.imie}</td>
-                                      <td>${users.nazwisko}</td>
-                                      <td>${users.email}</td>
-                                      <td>${users.numerTel}</td>
-                                      <td>${users.pesel}</td>
-                                      <td>${users.login}</td>
-                                      <td><a href="adminAdres/${users.idAdres}"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
+                                      <td>${adres.ulica}</td>
+                                      <td>${adres.dom}</td>
+                                      <td>${adres.mieszkanie}</td>
+                                      <td>${adres.zip}-${adres.zip2}</td>
+                                      <td>${adres.miasto}</td>
                                   </tr>
                               </c:forEach>  
 			    </tbody>

@@ -28,6 +28,15 @@ public class AdresDao {
             em.getTransaction().commit();
 	    return;
 	  }
+        
+         public List getByAdres(String IdAdres) {
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+                EntityManager em = emf.createEntityManager();
+                em.getTransaction().begin();
+                        return em.createQuery("from Adres where IdAdres = :IdAdres")
+                .setParameter("IdAdres", IdAdres)
+                .getResultList();
+        }
 //	  
 //	  public void delete(Adres adres) {
 //	    if (entityManager.contains(adres))
