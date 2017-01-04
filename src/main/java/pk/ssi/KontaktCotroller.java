@@ -42,7 +42,7 @@ public class KontaktCotroller {
         System.out.println(user.getPesel());
         kontakt.setPesel(user.getPesel());
         kd.create(kontakt);
-        return "adressBook";
+        return "redirectToShowAdressBook";
         
     }
     

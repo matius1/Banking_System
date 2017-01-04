@@ -11,7 +11,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="/bank/transferInternal">Wewnetrzny</a></li>
 						<li><a href="transferOUT.jsp">Zewnetrzny</a></li>
-						<li><a href="#">Ksiazka adresowa</a></li>
+						<li><a href="/bank/showContactList">Ksiazka adresowa</a></li>
 					</ul>
 				</li>
 				<li><a href="#">RACHUNKI BANKOWE</a></li>

@@ -39,22 +39,20 @@
 				        <th>ID</th>
 				        <th>Numer</th>
 				        <th>Nazwa</th>
-								<th>Akcja</th>
+					<th>Akcja</th>
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>5495090094495530</td>
-				        <td>Jan Kowalski - Praca</td>
-								<td><a href="#"><i class="glyphicon glyphicon glyphicon-remove"></i></a></td>
-				      </tr>
-				      <tr>
-				        <td>2</td>
-				        <td>5562801796483717</td>
-				        <td>Yakub Nowak</td>
-								<td><a href="#"><i class="glyphicon glyphicon glyphicon-remove"></i></a></td>
-				      </tr>
+                                        
+                                      <c:forEach var="kontakt" items="${listOfContacts}" varStatus="loop">
+                                      <tr>
+                                      <td>${loop.index + 1}</td>
+                                      <td>${kontakt.nazwa}</td>
+                                      <td>${kontakt.numer}</td>
+                                      <td><a href="#"><i class="glyphicon glyphicon glyphicon-remove"></i></a></td>
+                                  </tr>
+                              </c:forEach>
+
 
 				    </tbody>
 					<a href="addToBook.jsp" class="btn btn-success">Dodaj</a>
