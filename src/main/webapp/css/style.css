@@ -181,3 +181,23 @@ body {
 	padding: 0 10;
 	color: yellow;
 }
+
+.plus-sign-rounded {
+background:blue;
+width:33px;
+height:100px;
+position:relative;
+margin-left:33px;
+border-radius:20px;
+}
+.plus-sign-rounded:before{
+background:blue;
+content:"";
+width:100px;
+height:33px;
+position:absolute;
+top:33px;
+left:-33px;
+border-radius:20px;
+} 
+	

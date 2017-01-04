@@ -51,7 +51,7 @@
                                       <td>${users.numerTel}</td>
                                       <td>${users.pesel}</td>
                                       <td>${users.login}</td>
-                                      <td><a href="adminAdres/${users.idAdres}"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
+                                      <td><a href="/bank/adminAdres/${users.idAdres}"><i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
                                   </tr>
                               </c:forEach>  
 			    </tbody>
