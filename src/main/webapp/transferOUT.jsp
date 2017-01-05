@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,16 +24,14 @@
 	<div class="section">
 	
 	<h2>Przelew Zewnetrzny</h2>
-	
 	<form:form action='transferInternal' method="post" name="Transfer_Form" id="transferInId" >
                     <div class="form-group">
                         <label for="selectSource">Z:</label>
                         <select id="nr1" name="nr1" class="form-control" form="transferInId">
-                          <option>PL697205975139167893297143402333</option>
-                          <option>PL618896332508543497938224365029</option>
-                          <option>PL127648037306331363545991808917</option>
+                            <c:forEach var="account" items="${listOfAccount}" varStatus="loop">
+                                <option>${account.nrRachunku}</option>
+                            </c:forEach>
                         </select>
-                        <p class="saldo" >Saldo: 1235,12 PLN</p>
                     </div>
 
 

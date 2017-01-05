@@ -10,7 +10,7 @@
 					aria-expanded="false">PRZELEWY <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/bank/transferInternal">Wewnetrzny</a></li>
-						<li><a href="transferOUT.jsp">Zewnetrzny</a></li>
+						<li><a href="/bank/transferOut">Zewnetrzny</a></li>
 						<li><a href="/bank/showContactList">Ksiazka adresowa</a></li>
 					</ul>
 				</li>
