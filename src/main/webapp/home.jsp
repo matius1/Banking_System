@@ -25,7 +25,7 @@
 		<div class="accountTable">
 		
 			
-                    <h2>Twoje Numery Bankowe <a href="/bank/createNewAccount"><img src="http://project-games.eu/images/serversboard/glosuj.jpg"></a></h2>
+                    <h2>Twoje Numery Bankowe <a href="/bank/createNewAccount"><img src="lib/img/plus.jpg"></a></h2>
 			  
 			  <table class="table">
 			    <thead>
